@@ -29,6 +29,7 @@ function findRecord()
         select i in $searchResults
         do
             echo $i
+            
         done
     fi    
 }
