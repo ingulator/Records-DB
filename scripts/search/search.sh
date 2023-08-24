@@ -22,21 +22,15 @@ function findRecord()
     searchResults="`grep ^Abba DB/recordsDB.csv | cut -d "," -f 1`"
     resultAmount="`grep ^Abba DB/recordsDB.csv | cut -d "," -f 1 | wc -l`"
 
+
+
     IFS=$'\n' 
 
     if [[ $resultAmount -gt 1 ]]
     then
         select i in $searchResults
         do
-            j=1
-            case $j in
-                [:digit:])
-                echo nice
-                ;;
-                [::alpha::])
-                echo invalid
-                ;;
-            esac
+            echo $i
         done
     fi    
 }
