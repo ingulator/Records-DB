@@ -5,6 +5,8 @@ function searchDBFile()
     if [[ -f $DBFilePath$DBFileName ]]
     then
         echo db found
+
+        else 
     fi
 }
 
@@ -13,6 +15,7 @@ function searchLogFile()
     if [[ -f $logFilePath$logFileName ]]
     then
         echo log found
+        else
     fi
 }
 
@@ -29,8 +32,8 @@ function findRecord()
         select i in $searchResults
         do
             echo $i
-            
         done
+        
     fi    
 }
 
