@@ -5,6 +5,9 @@ function searchDBFile()
     if [[ -f $DBFilePath$DBFileName ]]
     then
         echo db found
+    else
+        echo "Database not found, creating a new file named $1"
+        touch DB/$1
     fi
 }
 
