@@ -24,19 +24,20 @@ function findRecord()
 
     IFS=$'\n' 
 
+
     if [[ $resultAmount -gt 1 ]]
     then
         select i in $searchResults
         do
             j=1
-            case $j in
-                [:digit:])
-                echo nice
-                ;;
-                [::alpha::])
-                echo invalid
-                ;;
-            esac
+            eval "case \"$choice\" in
+            $searchResults)             
+            echo do something good here
+            ;;
+            *)
+            echo invalid colour
+            ;;
+            esac"
         done
     fi    
 }
