@@ -29,15 +29,8 @@ function findRecord()
     then
         select i in $searchResults
         do
-            j=1
-            eval "case \"$choice\" in
-            $searchResults)             
-            echo do something good here
-            ;;
-            *)
-            echo invalid colour
-            ;;
-            esac"
+            echo $i
+            
         done
     fi    
 }
