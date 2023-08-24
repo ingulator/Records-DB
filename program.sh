@@ -1,6 +1,7 @@
 #!/bin/bash
 source globals/definitions.sh
 source scripts/search/search.sh
+source scripts/updates/updateAmount.sh
 
 DBFileName=$1
 
@@ -10,8 +11,8 @@ then
     exit
 fi
     
-#searchDBFile
-#searchLogFile
-findRecord
+
+#findRecord
+updateAmount
 
 

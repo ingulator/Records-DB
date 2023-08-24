@@ -1,5 +1,7 @@
 #! /bin/bash
 
+menu=("ADD" "UPDATE AMOUNT" "UPDATE NAME" "DELETE")
+
 function searchDBFile()
 {
     if [[ -f $DBFilePath$DBFileName ]]
@@ -18,21 +20,27 @@ function searchLogFile()
 
 function findRecord()
 {
-    #searchResults="`grep ^Abba DB/recordsDB.csv | sed 's/,.*/ /g'`"
-    searchResults="`grep ^Abba DB/recordsDB.csv | cut -d "," -f 1`"
-    resultAmount="`grep ^Abba DB/recordsDB.csv | cut -d "," -f 1 | wc -l`"
-
+    read -p "Please enter album name: " album
+   
+    searchResults="`grep -i $album DB/recordsDB.csv | sed 's/,/ /g' | sort`"
+    resultAmount="`grep -i $album DB/recordsDB.csv | sed 's/,/ /g' | wc -l`"
     IFS=$'\n' 
 
 
     if [[ $resultAmount -gt 1 ]]
     then
-        select i in $searchResults
-        do
-            echo $i
+    select i in $searchResults
+    do
+        echo $i
+        break
+    done
+    elif [[ $resultAmount -eq 1 ]]
+    then
+        echo "One search result was found: "
+    else
+        echo "No search results were found."
+    fi
             
-        done
-    fi    
 }
 
 
