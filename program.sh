@@ -2,6 +2,7 @@
 source globals/definitions.sh
 source scripts/search/search.sh
 source scripts/log/log.sh
+source scripts/updates/updateAmount.sh
 
 DBFileName=$1
 
