@@ -1,5 +1,7 @@
 #! /bin/bash
 
+menu=("ADD" "UPDATE AMOUNT" "UPDATE NAME" "DELETE")
+
 function searchDBFile()
 {
     if [[ -f $DBFilePath$DBFileName ]]
@@ -32,13 +34,12 @@ function findRecord()
             echo "Not enough letters, Please enter again"
         fi
     done
+
     #searchResults="`grep -i $vinyl DB/recordsDB.csv | cut -d "," -f 1`"
     searchResults="`grep -i $vinyl DB/recordsDB.csv | sed 's/,/ ---> /g' | sort`"
     resultAmount="`grep -i $vinyl DB/recordsDB.csv | sed 's/,/ ---> /g' | sort | wc -l`"
 
-
     IFS=$'\n' 
-
 
     if [[ $resultAmount -gt 1 ]]
     then
