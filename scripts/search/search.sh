@@ -36,9 +36,8 @@ function findRecord()
     done
 
     #searchResults="`grep -i $vinyl DB/recordsDB.csv | cut -d "," -f 1`"
-    searchResults="`grep -i $vinyl DB/recordsDB.csv | sed 's/,/ ---> /g' | sort`"
-    resultAmount="`grep -i $vinyl DB/recordsDB.csv | sed 's/,/ ---> /g' | sort | wc -l`"
-
+    searchResults="`grep -i $vinyl DB/recordsDB.csv | sed 's/,/ /g' | sort`"
+    resultAmount="`grep -i $vinyl DB/recordsDB.csv | sed 's/,/ /g' | sort | wc -l`"
     IFS=$'\n' 
 
     if [[ $resultAmount -gt 1 ]]
