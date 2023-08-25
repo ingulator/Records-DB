@@ -13,8 +13,10 @@ then
 fi
 
 
-searchDBFile $DBFileName
-searchLogFile
-findRecord
+#searchDBFile $DBFileName
+#searchLogFile
+#findRecord
+
+updateAmount $DBFileName
 
 
