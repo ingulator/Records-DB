@@ -49,8 +49,16 @@ function findRecord()
         select i in $searchResults
         do
             echo $i
-            
+            logToFile "Search success"
+            break
         done
+    elif [[ $resultAmount -eq 1 ]]
+    then
+        echo $searchResults
+        logToFile "Search success"
+    else
+        echo "No results found"
+        logToFile "Search failure"
     fi    
 }
 
