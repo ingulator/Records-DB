@@ -21,7 +21,8 @@ while true
         
             Search)
             echo "Search records"
-            #findRecords
+            findRecord
+            exit
             ;;
         
             UpdateName)
