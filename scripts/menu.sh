@@ -20,7 +20,6 @@ while true
             ;;   
         
             Search)
-            echo "Search records"
             findRecord
             exit
             ;;
@@ -41,8 +40,10 @@ while true
             echo "Print all records"
             ;;  
 
-            exit)
-
+            Quit)
+            echo
+            echo "Exiting program"
+            exit
             ;; 
          *)
             echo "Invalid choice. Please select a valid option."
