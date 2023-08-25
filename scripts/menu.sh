@@ -1,36 +1,49 @@
 #!/bin/bash
 
-Function print_menu(){
-     PS3="select option: "
-     options=("Add" "Delete" "Search" "UpdateName" "UpdateAmount" "PrintAmount" "PrintAll")
 
+function print_menu(){
+
+     options=("Add" "Delete" "Search" "UpdateName" "UpdateAmount" "PrintAmount" "PrintAll" "Quit") 
+     PS3="select option: " 
 while true
  do
-    select options in "${options[@]}" 
+    select option in "${options[@]}" 
     do
     case $option in
         
-            Add_records)
+            Add)
+            echo "Add records"
             ;;
          
-            Delete_records) 
+            Delete)
+            echo "Delete records" 
             ;;   
         
-            Search_records)
+            Search)
+            echo "Search records"
+            #findRecords
             ;;
         
-            UpdateName_recodrs)
+            UpdateName)
+            echo "Update record names"
             ;;
 
-            UpdateAmount_records)
+            UpdateAmount)
+            echo "Update record amounts"
             ;;   
         
-            PrintAmount_records)
+            PrintAmount)
+            echo "Print record amounts"
             ;;
         
-            PrintAll_records)
-            ;;   
-            *)
+            PrintAll)
+            echo "Print all records"
+            ;;  
+
+            exit)
+
+            ;; 
+         *)
             echo "Invalid choice. Please select a valid option."
             ;;
     esac
@@ -40,7 +53,7 @@ done
 
 }
 
-echo
+
 
 
 
