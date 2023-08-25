@@ -19,5 +19,5 @@ searchDBFile $DBFileName
 searchLogFile
 print_menu
 ##findRecord
-deleteVinyl $DBFileName
+#deleteVinyl $DBFileName
 
