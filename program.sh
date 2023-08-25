@@ -3,6 +3,7 @@ source globals/definitions.sh
 source scripts/search/search.sh
 source scripts/log/log.sh
 source scripts/updates/updateAmount.sh
+source scripts/menu.sh
 
 DBFileName=$1
 
@@ -15,6 +16,7 @@ fi
 
 searchDBFile $DBFileName
 searchLogFile
-findRecord
+print_menu
+#findRecord
 
 
