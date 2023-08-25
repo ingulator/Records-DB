@@ -12,7 +12,8 @@ while true
     case $option in
         
             Add)
-            echo "Add records"
+            addRecord
+            
             ;;
          
             Delete)
