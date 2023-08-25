@@ -10,6 +10,8 @@ function searchDBFile()
     else
         echo "Database not found, creating a new file named $1"
         touch DB/$1
+
+    
     fi
 }
 
@@ -18,6 +20,7 @@ function searchLogFile()
     if [[ -f $logFilePath$logFileName ]]
     then
         echo log found
+       
     fi
 }
 

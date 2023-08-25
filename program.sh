@@ -3,6 +3,8 @@ source globals/definitions.sh
 source scripts/search/search.sh
 source scripts/log/log.sh
 source scripts/updates/updateAmount.sh
+source scripts/menu.sh
+source scripts/delete/delete.sh
 
 DBFileName=$1
 
@@ -13,10 +15,9 @@ then
 fi
 
 
-#searchDBFile $DBFileName
-#searchLogFile
-#findRecord
-
-updateAmount $DBFileName
-
+searchDBFile $DBFileName
+searchLogFile
+print_menu
+##findRecord
+#deleteVinyl $DBFileName
 
