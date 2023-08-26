@@ -15,13 +15,13 @@ while true
             Add)
             echo "Add records"
             result=$(addRecord)
-            #logToFile $result
+            logToFile "Add" $result
             ;;
          
             Delete)
             echo "Delete records" 
             result=$(deleteVinyl)
-            #logToFile $result
+            logToFile "Delete" $result
             ;;   
         
             Search)
@@ -41,15 +41,15 @@ while true
             UpdateAmount)
             echo "Update record amounts"
             result=$(updateAmount)
-            #logToFile $result
+            logToFile "UpdateAmount" $result
             ;;   
         
             PrintAmount)
             echo "Print record amounts"
             if printTotal;
-            then logToFile "PrintAll" "Success"
+            then logToFile "PrintAmount" "Success"
             fi
-            #logToFile $result
+            logToFile $result
             ;;
         
             PrintAll)
