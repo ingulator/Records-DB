@@ -39,9 +39,6 @@ while true
             echo "Update record amounts"
             result=$(updateAmount)
             logToFile $result
-            exit
-            result = $(UpdateAmount)
-            logToFile $result
             ;;   
         
             PrintAmount)
