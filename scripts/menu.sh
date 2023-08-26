@@ -20,16 +20,16 @@ while true
          
             Delete)
             echo "Delete records" 
-            result = deleteVinyl
+            result = $(deleteVinyl)
             logToFile $result
-            exit
+
             ;;   
         
             Search)
             echo "Search"
-            result = findRecord
+            result = $(findRecord)
             logToFile $result
-            exit
+
             ;;
         
             UpdateName)
