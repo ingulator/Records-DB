@@ -4,10 +4,8 @@ menu=("ADD" "UPDATE AMOUNT" "UPDATE NAME" "DELETE")
 
 function searchDBFile()
 {
-    if [[ -f $DBFilePath$DBFileName ]]
+    if [[ ! -f $DBFilePath$DBFileName ]]
     then
-        #echo db found
-    else
         echo "Database not found, creating a new file named $1"
         touch DB/$1
     fi
@@ -15,9 +13,9 @@ function searchDBFile()
 
 function searchLogFile()
 {
-    if [[ -f $logFilePath$logFileName ]]
+    if [[ ! -f $logFilePath$logFileName ]]
     then
-        #echo log found
+        echo "log not found"
        
     fi
 }
