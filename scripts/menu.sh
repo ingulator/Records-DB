@@ -13,14 +13,22 @@ while true
         
             Add)
             echo "Add records"
+            addRecord
+            #logToFile $result
+            exit
             ;;
          
             Delete)
             echo "Delete records" 
+            result = deleteVinyl
+            logToFile $result
+            exit
             ;;   
         
             Search)
-            findRecord
+            echo "Search"
+            result = findRecord
+            logToFile $result
             exit
             ;;
         
@@ -30,6 +38,9 @@ while true
 
             UpdateAmount)
             echo "Update record amounts"
+            result=$(updateAmount)
+            logToFile $result
+            exit
             ;;   
         
             PrintAmount)

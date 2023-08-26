@@ -26,43 +26,46 @@ then
    #This sed command goes through to DB file to the respective row number that was passed to it, and updates the amount of album in said row 
    sed -i -e "${rowNumForRecord1}s/,.*/,$amount/" $DBFilePath$DBFileName
 else
+echo echo echo ceho cehcoehcoehcoehco
     local albumName=$(findRecord)
     local formattedOutput="`cut -d "," -f2 <<< "$albumName"`"
     local formattedAlbumName="`cut -d "," -f1 <<< "$albumName"`"	
 
-    if [[ $formattedOutput == ' No results found' ]]
+    echo "This is formattedOutput $formattedOutput"
+    if [[ $formattedOutput == ' No results were found' ]]
     then
-	if [[ $1 == "-add" ]]
-	then
-	       echo "Record was not found in stock, adding it to the Database."
-	       read -p "Please enter the amount of Album to add" albumAmt
-	       
-	       if [[ $albumAmt -lt 1 ]]
-	       then
-	       		echo "Invalid amount of Albums to add"
-	 		logToFile "User tried to add invalid amount of albums: Less than 1"
-			exit
-	        else
-			echo "$formattedAlbumName,$albumAmt" >> "$DBFilePath$DBFileName"
-			logToFile "Added record: $formattedAlbumName (albumAmt)
-	       fi
-	else
-       		 echo $albumName
-       		 echo "Returning to Main Menu."
-	fi
+        if [[ $1 == "-add" ]]
+        then
+            echo "Record was not found in stock, adding it to the Database."
+            read -p "Please enter the amount of Album to add" albumAmt
+            
+            if [[ $albumAmt -lt 1 ]]
+            then
+                echo "Invalid amount of Albums to add"
+                logToFile "User tried to add invalid amount of albums: Less than 1"
+                exit
+            else
+                echo "$formattedAlbumName,$albumAmt" >> "$DBFilePath$DBFileName"
+                logToFile "Added record: $formattedAlbumName (albumAmt)"
+            fi
+        else
+                echo $albumName
+                echo "Returning to Main Menu."
+        fi
     else
-	    stockUp=1
+	    
+        stockUp=1
 	    amount=1
 	    addFlag=0
 
 	    if [[ $1 == "-add" ]]
 	    then
 		    read -p "Album already exists. Please enter the amount that you would like to add to stock: " stockUp
-		    addFlag=1
+            addFlag=1
 	    else
-        #The new amount, checks whether amount is valid (greater than 1)
+                #The new amount, checks whether amount is valid (greater than 1)
        		     read -p "Please enter new amount: " amount
-	     fi
+	    fi
 
        	if [[ $amount -lt 1 || $stockUp -lt 1 ]]
         then
@@ -70,25 +73,26 @@ else
             logToFile "Update amount failed, due to invalid input: less than 1."
             exit
         fi
+        
+        #Returns only the Album name, removing the amount from the row
+        local albumNametemp="`printf '%s\n' "${albumName//[[:digit:]]/}" | sed 's/ *$//g'`"
+        local albumAmount1="`echo $albumName | awk '{print $(NF)}'`"
+        #rev | cut -d ' ' -f 1 | rev`"
+         #awk '{print $(NF)}'`"
+         
+        local temp="$albumNametemp,$albumAmount1"
 
- 	 #Returns only the Album name, removing the amount from the row
-	 local albumNametemp="`printf '%s\n' "${albumName//[[:digit:]]/}" | sed 's/ *$//g'`"
-         local albumAmount1="`echo $albumName | rev | cut -d ' ' -f 1 | rev`"
-   	 local temp="$albumNametemp,$albumAmount1"
-       
-
-
-
-	#Returns the number of row in which the record the user picked is located
-	local rowNumForRecord="`awk -v string="$temp" '$0 == string {print NR}' $DBFilePath$DBFileName`"
+	    #Returns the number of row in which the record the user picked is located
+	    local rowNumForRecord="`awk -v string="$temp" '$0 == string {print NR}' $DBFilePath$DBFileName`"
       	
        	if [[ $addFlag -eq 1 ]]
-	then
-		 local addAmountToExisting=$(( $albumAmount1+$stockUp ))
-		 sed -i -e "${rowNumForRecord}s/,.*/,$addAmountToExisting/" $DBFilePath$DBFileName
-	 else
+	    then
+		     local addAmountToExisting=$(( $albumAmount1+$stockUp ))
+		    sed -i -e "${rowNumForRecord}s/,.*/,$addAmountToExisting/" $DBFilePath$DBFileName
+	    else
         #This sed command goes through to DB file to the respective row number that was passed to it, and updates the amount of album in said row
- 	sed -i -e "${rowNumForRecord}s/,.*/,$amount/" $DBFilePath$DBFileName
+ 	    sed -i -e "${rowNumForRecord}s/,.*/,$amount/" $DBFilePath$DBFileName
+        fi
     fi
 fi
 }

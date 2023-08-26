@@ -20,7 +20,7 @@ fi
 searchDBFile $DBFileName
 searchLogFile
 
-#print_menu
+print_menu
 ##findRecord
 #addRecord $DBFileName
 #printSorted
