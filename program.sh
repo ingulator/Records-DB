@@ -24,6 +24,6 @@ searchLogFile
 
 #deleteVinyl $DBFileName
 
-addRecord $DBFileName
+#addRecord $DBFileName
 
 
