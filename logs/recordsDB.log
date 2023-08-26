@@ -154,9 +154,6 @@ Thu, Aug 24, 2023  8:58:44 PM No results found
 25-08-2023 16:04:56 Search success
 25-08-2023 16:07:12 Search success
 25-08-2023 16:07:44 Search success
-<<<<<<< HEAD
->>>>>>> 0ff62c2756248a80442daf6131827cf66b56997b
-=======
 26-08-2023 09:10:52 Search success
 26-08-2023 09:15:50 Search success
 26-08-2023 09:17:57 Search success
@@ -196,27 +193,4 @@ Thu, Aug 24, 2023  8:58:44 PM No results found
 26-08-2023 10:40:43 Search failure
 26-08-2023 10:42:06 Search failure
 26-08-2023 10:43:50 Search failure
->>>>>>> 7e05ab78df429028f9185ab76749acc7a754b211
-26-08-2023 19:27:09 
-26-08-2023 19:28:46 
-26-08-2023 19:29:41 
-26-08-2023 19:29:57 succes
-26-08-2023 19:32:50 Search failure
-26-08-2023 19:33:13 Search success
-26-08-2023 19:33:24 succes
-26-08-2023 19:59:23 succes
-26-08-2023 20:01:12 
-26-08-2023 20:13:56 Search success
-26-08-2023 20:13:58 
-26-08-2023 20:14:44 Search success
-26-08-2023 20:14:46 succes
-26-08-2023 20:15:00 Search failure
-26-08-2023 20:16:54 Search failure
-26-08-2023 20:18:14 Search failure
-26-08-2023 20:18:57 Search failure
-26-08-2023 20:19:30 Search failure
-26-08-2023 20:20:29 Search failure
-26-08-2023 20:22:11 Search failure
-26-08-2023 20:23:20 Search failure
-26-08-2023 20:24:23 Search failure
-26-08-2023 20:24:43 Added record: this is a new album (albumAmt)
+>>>>>>>>> Temporary merge branch 2
