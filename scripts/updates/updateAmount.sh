@@ -31,7 +31,6 @@ echo echo echo ceho cehcoehcoehcoehco
     local formattedOutput="`cut -d "," -f2 <<< "$albumName"`"
     local formattedAlbumName="`cut -d "," -f1 <<< "$albumName"`"	
 
-    echo "This is formattedOutput $formattedOutput"
     if [[ $formattedOutput == ' No results were found' ]]
     then
         if [[ $1 == "-add" ]]

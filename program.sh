@@ -24,4 +24,4 @@ print_menu
 ##findRecord
 #addRecord $DBFileName
 #printSorted
-printTotal
+#printTotal

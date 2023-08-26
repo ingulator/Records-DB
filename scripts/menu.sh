@@ -13,14 +13,14 @@ while true
         
             Add)
             echo "Add records"
-            addRecord
-            #logToFile $result
+            result=$(addRecord)
+            logToFile $result
             exit
             ;;
          
             Delete)
             echo "Delete records" 
-            result = deleteVinyl
+            result =$(deleteVinyl)
             logToFile $result
             exit
             ;;   
