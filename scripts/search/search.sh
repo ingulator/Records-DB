@@ -26,10 +26,15 @@ function searchLogFile()
 
 function findRecord()
 {
+	if [[ $1 == "-add" ]] 
+	then
+		read -p "Please enter Vinyl name that you wish to add: " vinyl
+	else
+		read -p "Please enter Vinyl name: " vinyl
+	fi
     flag=1
     while [ $flag -eq 1 ]
     do
-        read -p "Enter Vinyl name: " vinyl
         if [ ${#vinyl} -ge 3 ]
         then
             flag=0
@@ -39,8 +44,8 @@ function findRecord()
     done
 
     #searchResults="`grep -i $vinyl DB/recordsDB.csv | cut -d "," -f 1`"
-    searchResults="`grep -i $vinyl DB/recordsDB.csv | sed 's/,/ /g' | sort`"
-    resultAmount="`grep -i $vinyl DB/recordsDB.csv | sed 's/,/ /g' | sort | wc -l`"
+    searchResults="`grep -i "$vinyl" DB/recordsDB.csv | sed 's/,/ /g' | sort`"
+    resultAmount="`grep -i "$vinyl" DB/recordsDB.csv | sed 's/,/ /g' | sort | wc -l`"
     IFS=$'\n' 
 
     if [[ $resultAmount -gt 1 ]]
@@ -56,7 +61,7 @@ function findRecord()
         echo $searchResults
         logToFile "Search success"
     else
-        echo "No results found"
+	echo  "$vinyl, No results were found"
         logToFile "Search failure"
     fi    
 }
