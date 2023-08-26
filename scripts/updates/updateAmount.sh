@@ -44,7 +44,7 @@ else
 			exit
 	        else
 			echo "$formattedAlbumName,$albumAmt" >> "$DBFilePath$DBFileName"
-			logToFile "Added record: $formattedAlbumName (albumAmt)
+			logToFile "Added record: $formattedAlbumName (albumAmt)"
 	       fi
 	else
        		 echo $albumName
@@ -86,9 +86,10 @@ else
 	then
 		 local addAmountToExisting=$(( $albumAmount1+$stockUp ))
 		 sed -i -e "${rowNumForRecord}s/,.*/,$addAmountToExisting/" $DBFilePath$DBFileName
-	 else
+	else
         #This sed command goes through to DB file to the respective row number that was passed to it, and updates the amount of album in said row
  	sed -i -e "${rowNumForRecord}s/,.*/,$amount/" $DBFilePath$DBFileName
+	fi
     fi
 fi
 }
