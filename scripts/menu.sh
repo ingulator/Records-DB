@@ -19,19 +19,19 @@ while true
          
             Delete)
             echo "Delete records" 
-            result = $(deleteVinyl)
+            result=$(deleteVinyl)
             logToFile $result
             ;;   
         
             Search)
             echo "Search"
-            result = $(findRecord)
+            result=$(findRecord)
             logToFile $result
             ;;
         
             UpdateName)
             echo "Update record names"
-            result = $(UpdateName)
+            result=$(UpdateName)
             logToFile $result
             ;;
 
@@ -46,13 +46,13 @@ while true
         
             PrintAmount)
             echo "Print record amounts"
-            result = $(PrintAmount)
+            result=$(PrintAmount)
             logToFile $result
             ;;
         
             PrintAll)
             echo "Print all records"
-            result = $(findRecord)
+            result=$(findRecord)
             logToFile $result
             ;;  
 
