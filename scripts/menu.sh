@@ -4,7 +4,7 @@
 function print_menu(){
 
      options=("Add" "Delete" "Search" "UpdateName" "UpdateAmount" "PrintAmount" "PrintAll" "Quit") 
-     PS3="select option: " 
+     PS3="select option from 1 to 8: " 
 while true
  do
     select option in "${options[@]}" 
@@ -15,13 +15,13 @@ while true
             Add)
             echo "Add records"
             result=$(addRecord)
-            logToFile "Add" $result
+            logToFile "Add" "Success"
             ;;
          
             Delete)
             echo "Delete records" 
             result=$(deleteVinyl)
-            logToFile "Delete" $result
+            logToFile "Delete" "Success"
             ;;   
         
             Search)
@@ -35,28 +35,25 @@ while true
             echo "Update record names"
             UpdateName
             #result1=$(UpdateName)
-            #logToFile $result
+            logToFile "UpdateName" "Success"
             ;;
 
             UpdateAmount)
             echo "Update record amounts"
             result=$(updateAmount)
-            logToFile "UpdateAmount" $result
+            logToFile "UpdateAmount" "Success"
             ;;   
         
             PrintAmount)
             echo "Print record amounts"
-            if printTotal;
-            then logToFile "PrintAmount" "Success"
-            fi
-            logToFile $result
+            printTotal
+            logToFile "PrintAmount" "Success"
             ;;
         
             PrintAll)
             echo "Print all records"
-            if printSorted;
-            then logToFile "PrintAll" "Success"  
-            fi
+            printSorted;
+            logToFile "PrintAll" "Success"  
             ;;  
 
             Quit)

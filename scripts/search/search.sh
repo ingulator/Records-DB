@@ -42,15 +42,16 @@ function findRecord()
     #searchResults="`grep -i $vinyl DB/recordsDB.csv | cut -d "," -f 1`"
     searchResults="`grep -i "$vinyl" DB/recordsDB.csv | sed 's/,/ /g' | sort`"
     resultAmount="`grep -i "$vinyl" DB/recordsDB.csv | sed 's/,/ /g' | sort | wc -l`"
-    IFS=$'\n' 
+    
 
     if [[ $resultAmount -gt 1 ]]
     then
+         IFS=$'\n'
         select i in $searchResults
         do
             echo $i
-            return 1
         done
+        unset IFS
     elif [[ $resultAmount -eq 1 ]]
     then
         echo $searchResults

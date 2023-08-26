@@ -4,7 +4,7 @@
 function addRecord()
 {
 	updateAmount "-add"
-	echo "Added"
-	return 1
+	#local temp="Success"
+	#echo $temp
 }
 
