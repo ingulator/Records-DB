@@ -8,7 +8,7 @@ if [[ $albumName1 == "No results found" ]]
 then
     echo $albumName1
     echo "Returning to Main Menu."
-    exit
+    return "Success"
 fi
 
 
@@ -20,9 +20,10 @@ then
     #sed -i "s/oldstr/newstr/g"
     sed -i -e "/$albumName1/d" $DBFilePath$DBFileName
     echo "Record deleted"
-    #TODO:LOG TO FILE PLS
+    return "Success"
 else
     updateAmount "-d" "$albumName1" "$albumAmount"
     echo "Delete successful"
+    return "Success"
 fi
 }
