@@ -6,7 +6,7 @@ function searchDBFile()
 {
     if [[ -f $DBFilePath$DBFileName ]]
     then
-        echo db found
+        #echo db found
     else
         echo "Database not found, creating a new file named $1"
         touch DB/$1
@@ -17,7 +17,7 @@ function searchLogFile()
 {
     if [[ -f $logFilePath$logFileName ]]
     then
-        echo log found
+        #echo log found
        
     fi
 }
