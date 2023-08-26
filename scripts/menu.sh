@@ -34,10 +34,13 @@ while true
         
             PrintAmount)
             echo "Print record amounts"
+            printTotal
             ;;
         
             PrintAll)
             echo "Print all records"
+            printSorted
+            exit
             ;;  
 
             Quit)
