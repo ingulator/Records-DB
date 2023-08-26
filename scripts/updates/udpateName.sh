@@ -15,7 +15,10 @@ function updateName()
 
         #Returns only the Album name, removing the amount from the row
         local albumNametemp="`printf '%s\n' "${albumName//[[:digit:]]/}" | sed 's/ *$//g'`"
-        local albumAmount1="`echo $albumName | rev | cut -d ' ' -f 1 | rev`"
+        local albumAmount1="`echo $albumName | awk '{print $(NF)}'`"
+        #rev | cut -d ' ' -f 1 | rev`"
+        #awk '{print $(NF)}'
+        
         local temp="$albumNametemp,$albumAmount1"
         
 	    #Returns the number of row in which the record the user picked is located

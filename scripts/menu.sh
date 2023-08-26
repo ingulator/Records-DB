@@ -13,8 +13,8 @@ while true
         
             Add)
             echo "Add records"
-            result=$(addRecord)
-            logToFile $result
+            addRecord
+            #logToFile $result
             exit
             ;;
          
@@ -38,6 +38,9 @@ while true
 
             UpdateAmount)
             echo "Update record amounts"
+            result=$(updateAmount)
+            logToFile $result
+            exit
             ;;   
         
             PrintAmount)
