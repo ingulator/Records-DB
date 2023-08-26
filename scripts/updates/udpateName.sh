@@ -10,7 +10,9 @@ function updateName()
                 echo $albumName
                 echo "Returning to Main Menu."
     else
-
+        
+        #Reconstructs the album name and album amount so that it has the same format
+        #as the csv file
         read -p "Please enter a new name for the album: " newName
 
         #Returns only the Album name, removing the amount from the row
