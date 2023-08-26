@@ -10,7 +10,7 @@ function printTotal(){
     if [ -z "$allRecords" ]
     then
       echo "There are no records in Database"
-      exit
+      return 1
     fi
 
 
@@ -20,14 +20,18 @@ function printTotal(){
 
     done
     echo "There's a total of "$totalAmount" records"
+    return 1
 } 
 
 function printSorted(){
+
+    echo "$DBFilePath$DBFileName"
     if ! [[ -s "$DBFilePath$DBFileName" ]]
     then
       echo "There are no records in Database"
-      exit
+     
     else
       cat $DBFilePath$DBFileName | sort 
-    fi
+   fi
+   return 1
 }

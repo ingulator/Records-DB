@@ -4,22 +4,18 @@ menu=("ADD" "UPDATE AMOUNT" "UPDATE NAME" "DELETE")
 
 function searchDBFile()
 {
-    if [[ -f $DBFilePath$DBFileName ]]
+    if [[ ! -f $DBFilePath$DBFileName ]]
     then
-        echo db found
-    else
         echo "Database not found, creating a new file named $1"
         touch DB/$1
-
-    
     fi
 }
 
 function searchLogFile()
 {
-    if [[ -f $logFilePath$logFileName ]]
+    if [[ ! -f $logFilePath$logFileName ]]
     then
-        echo log found
+        echo "log not found"
        
     fi
 }
@@ -53,16 +49,15 @@ function findRecord()
         select i in $searchResults
         do
             echo $i
-            logToFile "Search success"
-            break
+            return 1
         done
     elif [[ $resultAmount -eq 1 ]]
     then
         echo $searchResults
-        logToFile "Search success"
+        return 1
     else
 	echo  "$vinyl, No results were found"
-        logToFile "Search failure"
+        return 1
     fi    
 }
 

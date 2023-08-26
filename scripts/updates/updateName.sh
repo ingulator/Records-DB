@@ -29,5 +29,4 @@ function updateName()
         #This sed command goes through to DB file to the respective row number that was passed to it, and updates the amount of album in said row
  	    sed -i -e "${rowNumForRecord}s/$albumNametemp/$newName/" $DBFilePath$DBFileName
     fi
-fi
 }
