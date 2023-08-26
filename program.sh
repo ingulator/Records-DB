@@ -19,7 +19,7 @@ fi
 searchDBFile $DBFileName
 searchLogFile
 
-#print_menu
+print_menu
 ##findRecord
 
 #deleteVinyl $DBFileName

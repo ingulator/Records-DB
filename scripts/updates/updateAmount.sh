@@ -32,24 +32,25 @@ else
 
     if [[ $formattedOutput == ' No results found' ]]
     then
-	if [[ $1 == "-add" ]]
-	then
-	       echo "Record was not found in stock, adding it to the Database."
-	       read -p "Please enter the amount of Album to add" albumAmt
-	       
-	       if [[ $albumAmt -lt 1 ]]
-	       then
-	       		echo "Invalid amount of Albums to add"
-	 		logToFile "User tried to add invalid amount of albums: Less than 1"
-			exit
-	        else
-			echo "$formattedAlbumName,$albumAmt" >> "$DBFilePath$DBFileName"
-			logToFile "Added record: $formattedAlbumName (albumAmt)
-	       fi
-	else
-       		 echo $albumName
-       		 echo "Returning to Main Menu."
-	fi
+        if [[ $1 == "-add" ]]
+        then
+            echo "Record was not found in stock, adding it to the Database."
+            read -p "Please enter the amount of Album to add" albumAmt
+            
+            if [[ $albumAmt -lt 1 ]]
+            then
+                    echo "Invalid amount of Albums to add"
+                logToFile "User tried to add invalid amount of albums: Less than 1"
+                exit
+                else
+                echo "$formattedAlbumName,$albumAmt" >> "$DBFilePath$DBFileName"
+                logToFile "Added record: $formattedAlbumName (albumAmt)"
+            fi
+        else
+                echo $albumName
+                echo "Returning to Main Menu."
+        fi
+
     else
 	    stockUp=1
 	    amount=1
@@ -71,24 +72,25 @@ else
             exit
         fi
 
- 	 #Returns only the Album name, removing the amount from the row
-	 local albumNametemp="`printf '%s\n' "${albumName//[[:digit:]]/}" | sed 's/ *$//g'`"
-         local albumAmount1="`echo $albumName | rev | cut -d ' ' -f 1 | rev`"
-   	 local temp="$albumNametemp,$albumAmount1"
-       
+        #Returns only the Album name, removing the amount from the row
+        local albumNametemp="`printf '%s\n' "${albumName//[[:digit:]]/}" | sed 's/ *$//g'`"
+        local albumAmount1="`echo $albumName | rev | cut -d ' ' -f 1 | rev`"
+        local temp="$albumNametemp,$albumAmount1"
+        
 
 
 
-	#Returns the number of row in which the record the user picked is located
-	local rowNumForRecord="`awk -v string="$temp" '$0 == string {print NR}' $DBFilePath$DBFileName`"
-      	
-       	if [[ $addFlag -eq 1 ]]
-	then
-		 local addAmountToExisting=$(( $albumAmount1+$stockUp ))
-		 sed -i -e "${rowNumForRecord}s/,.*/,$addAmountToExisting/" $DBFilePath$DBFileName
-	 else
-        #This sed command goes through to DB file to the respective row number that was passed to it, and updates the amount of album in said row
- 	sed -i -e "${rowNumForRecord}s/,.*/,$amount/" $DBFilePath$DBFileName
+        #Returns the number of row in which the record the user picked is located
+        local rowNumForRecord="`awk -v string="$temp" '$0 == string {print NR}' $DBFilePath$DBFileName`"
+            
+        if [[ $addFlag -eq 1 ]]
+        then
+            local addAmountToExisting=$(( $albumAmount1+$stockUp ))
+            sed -i -e "${rowNumForRecord}s/,.*/,$addAmountToExisting/" $DBFilePath$DBFileName
+        else
+            #This sed command goes through to DB file to the respective row number that was passed to it, and updates the amount of album in said row
+        sed -i -e "${rowNumForRecord}s/,.*/,$amount/" $DBFilePath$DBFileName
+        fi
     fi
 fi
 }
