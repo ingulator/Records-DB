@@ -43,16 +43,28 @@ else
 	 		logToFile "User tried to add invalid amount of albums: Less than 1"
 			exit
 	        else
-			echo "$formattedAlbumName,$albumAmt"
+			echo "$formattedAlbumName,$albumAmt" >> "$DBFilePath$DBFileName"
+			logToFile "Added record: $formattedAlbumName (albumAmt)
 	       fi
 	else
        		 echo $albumName
        		 echo "Returning to Main Menu."
 	fi
     else
+	    stockUp=1
+	    amount=1
+	    addFlag=0
+
+	    if [[ $1 == "-add" ]]
+	    then
+		    read -p "Album already exists. Please enter the amount that you would like to add to stock: " stockUp
+		    addFlag=1
+	    else
         #The new amount, checks whether amount is valid (greater than 1)
-        read -p "Please enter new amount: " amount
-        if [[ $amount -lt 1 ]]
+       		     read -p "Please enter new amount: " amount
+	     fi
+
+       	if [[ $amount -lt 1 || $stockUp -lt 1 ]]
         then
             echo "Invalid amount, amount cannot be less than 1"
             logToFile "Update amount failed, due to invalid input: less than 1."
@@ -63,10 +75,18 @@ else
 	 local albumNametemp="`printf '%s\n' "${albumName//[[:digit:]]/}" | sed 's/ *$//g'`"
          local albumAmount1="`echo $albumName | rev | cut -d ' ' -f 1 | rev`"
    	 local temp="$albumNametemp,$albumAmount1"
-        
+       
+
+
+
 	#Returns the number of row in which the record the user picked is located
 	local rowNumForRecord="`awk -v string="$temp" '$0 == string {print NR}' $DBFilePath$DBFileName`"
-      
+      	
+       	if [[ $addFlag -eq 1 ]]
+	then
+		 local addAmountToExisting=$(( $albumAmount1+$stockUp ))
+		 sed -i -e "${rowNumForRecord}s/,.*/,$addAmountToExisting/" $DBFilePath$DBFileName
+	 else
         #This sed command goes through to DB file to the respective row number that was passed to it, and updates the amount of album in said row
  	sed -i -e "${rowNumForRecord}s/,.*/,$amount/" $DBFilePath$DBFileName
     fi
