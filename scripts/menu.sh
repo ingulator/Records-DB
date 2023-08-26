@@ -13,14 +13,22 @@ while true
         
             Add)
             echo "Add records"
+           # $result = addRecord
+           # logToFile $result
+            exit
             ;;
          
             Delete)
             echo "Delete records" 
+            $result = deleteVinyl
+            logToFile $result
+            exit
             ;;   
         
             Search)
-            findRecord
+            echo "Search"
+            $result = findRecord
+            logToFile $result
             exit
             ;;
         

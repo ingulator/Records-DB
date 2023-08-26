@@ -16,11 +16,11 @@ function addRecord()
 		if [[ $albumAmt -lt 1 ]]
 		then 
 			echo "Invalid amount of Albums"
-			logToFile "Tried to add invalid amount of albums: Less than 1"
+			echo "failure"
 			exit
 		else
 			echo "$formattedAlbumName,$albumAmt" >> "$DBFilePath$DBFileName"
-			logToFile "Added record: $formattedAlbumName ($albumAmt)"
+			echo "success"
 		fi
 	else
 
