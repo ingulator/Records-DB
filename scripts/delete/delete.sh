@@ -13,8 +13,9 @@ then
 fi
 
 
-local currentAmount="`grep -i "$albumName1" $DBFilePath$DBFileName | cut -d "," -f 2`"
-echo THIS IS CURRENTY AMOUTNT $currentAmount
+local albumAmount="`echo $albumName1 | rev | cut -d ' ' -f 1 | rev`"
+echo THIS IS CURRENTY AMOUTNT $albumAmount
+
 if [[ $currentAmount -eq 1 ]]
 then
     #sed -i "s/oldstr/newstr/g"
@@ -22,7 +23,7 @@ then
     echo "Record deleted"
     #TODO:LOG TO FILE PLS
 else
-    updateAmount "-d" "$albumName1" "$currentAmount"
+    updateAmount "-d" "$albumName1" "$albumAmount"
     echo "Delete successful"
 fi
 }

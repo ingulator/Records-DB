@@ -20,5 +20,5 @@ searchLogFile
 
 #print_menu
 ##findRecord
-updateAmount $DBFileName
+deleteVinyl $DBFileName
 

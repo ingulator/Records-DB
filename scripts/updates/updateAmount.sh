@@ -8,8 +8,8 @@ then
     local tempAlbumAmount=$3
     echo this is tempAlbumAmount $tempAlbumAmount
     local amount=$(( $tempAlbumAmount-1 ))
-    local rowNumForRecord="`awk -v var="$tempAlbumName" '$0 ~ var{ print NR }' $DBFilePath$DBFileName`"
-    sed -i -e "${rowNumForRecord}s/,.*/,$amount/" DB/recordsDB.csv
+	local rowNumForRecord="`awk -v string="$temp" '$0 == string {print NR}' $DBFilePath$DBFileName`"
+	sed -i -e "${rowNumForRecord}s/,.*/,$amount/" $DBFilePath$DBFileName
 else
     local albumName=$(findRecord)
 
@@ -30,8 +30,8 @@ else
 
  	#Returns only the Album name, removing the amount from the row
 	local albumNametemp="`printf '%s\n' "${albumName//[[:digit:]]/}" | sed 's/ *$//g'`"
-        local albumAmount1="`echo $albumName | rev | cut -d ' ' -f 1 | rev`"
-        local temp="$albumNametemp,$albumAmount1"
+    local albumAmount1="`echo $albumName | rev | cut -d ' ' -f 1 | rev`"
+    local temp="$albumNametemp,$albumAmount1"
         
 	#Returns the number of row in which the record the user picked is located
 	local rowNumForRecord="`awk -v string="$temp" '$0 == string {print NR}' $DBFilePath$DBFileName`"
