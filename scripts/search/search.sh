@@ -10,8 +10,6 @@ function searchDBFile()
     else
         echo "Database not found, creating a new file named $1"
         touch DB/$1
-
-    
     fi
 }
 
@@ -53,16 +51,15 @@ function findRecord()
         select i in $searchResults
         do
             echo $i
-            logToFile "Search success"
-            break
+            return "Success"
         done
     elif [[ $resultAmount -eq 1 ]]
     then
         echo $searchResults
-        logToFile "Search success"
+        return "Success"
     else
 	echo  "$vinyl, No results were found"
-        logToFile "Search failure"
+        return "Success"
     fi    
 }
 
