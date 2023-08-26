@@ -21,9 +21,9 @@ searchLogFile
 
 #print_menu
 ##findRecord
-<<<<<<< HEAD
+
 #deleteVinyl $DBFileName
-=======
+
 addRecord $DBFileName
->>>>>>> 7e05ab78df429028f9185ab76749acc7a754b211
+
 
