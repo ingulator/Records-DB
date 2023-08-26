@@ -26,12 +26,11 @@ then
    #This sed command goes through to DB file to the respective row number that was passed to it, and updates the amount of album in said row 
    sed -i -e "${rowNumForRecord1}s/,.*/,$amount/" $DBFilePath$DBFileName
 else
-echo echo echo ceho cehcoehcoehcoehco
+    
     local albumName=$(findRecord)
     local formattedOutput="`cut -d "," -f2 <<< "$albumName"`"
     local formattedAlbumName="`cut -d "," -f1 <<< "$albumName"`"	
 
-    echo "This is formattedOutput $formattedOutput"
     if [[ $formattedOutput == ' No results were found' ]]
     then
         if [[ $1 == "-add" ]]
