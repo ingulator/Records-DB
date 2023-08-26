@@ -29,9 +29,9 @@ function printSorted(){
     if ! [[ -s "$DBFilePath$DBFileName" ]]
     then
       echo "There are no records in Database"
-      return 1
+     
     else
       cat $DBFilePath$DBFileName | sort 
-      return 1
-    fi
+   fi
+   return 1
 }

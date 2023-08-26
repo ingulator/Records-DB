@@ -19,10 +19,7 @@ function searchLogFile()
        
     fi
 }
-function findRecord1(){
-    echo "findRecord"
-    return 1
-}
+
 function findRecord()
 {
 	if [[ $1 == "-add" ]] 

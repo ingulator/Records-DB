@@ -23,5 +23,5 @@ searchLogFile
 print_menu
 ##findRecord
 #addRecord $DBFileName
-#printSorted
-#printTotal
+printSorted
+printTotal

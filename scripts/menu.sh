@@ -46,15 +46,17 @@ while true
         
             PrintAmount)
             echo "Print record amounts"
-            printTotal
+            if printTotal;
+            then logToFile "PrintAll" "Success"
+            fi
             #logToFile $result
             ;;
         
             PrintAll)
             echo "Print all records"
-            printSorted
-            #result=$(printSorted)
-            #logToFile $result
+            if printSorted;
+            then logToFile "PrintAll" "Success"  
+            fi
             ;;  
 
             Quit)
