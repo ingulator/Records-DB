@@ -9,48 +9,52 @@ while true
  do
     select option in "${options[@]}" 
     do
+    local result=0
     case $option in
         
             Add)
             echo "Add records"
             result=$(addRecord)
-            logToFile $result
+            #logToFile $result
             ;;
          
             Delete)
             echo "Delete records" 
             result=$(deleteVinyl)
-            logToFile $result
+            #logToFile $result
             ;;   
         
             Search)
             echo "Search"
+            #findRecord
             result=$(findRecord)
-            logToFile $result
+            #logToFile $result
             ;;
         
             UpdateName)
             echo "Update record names"
-            result=$(UpdateName)
-            logToFile $result
+            UpdateName
+            #result1=$(UpdateName)
+            #logToFile $result
             ;;
 
             UpdateAmount)
             echo "Update record amounts"
             result=$(updateAmount)
-            logToFile $result
+            #logToFile $result
             ;;   
         
             PrintAmount)
             echo "Print record amounts"
-            result=$(PrintAmount)
-            logToFile $result
+            printTotal
+            #logToFile $result
             ;;
         
             PrintAll)
             echo "Print all records"
-            result=$(printSorted)
-            logToFile $result
+            printSorted
+            #result=$(printSorted)
+            #logToFile $result
             ;;  
 
             Quit)

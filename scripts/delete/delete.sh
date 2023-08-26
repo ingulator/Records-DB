@@ -13,7 +13,7 @@ if [[ $albumName1 == " No results found" ]]
 then
     echo $albumName1
     echo "Returning to Main Menu."
-    return "Success"
+    return 1
 fi
 
 #Returns the current amount of the album
@@ -25,7 +25,7 @@ then
     #sed -i "s/oldstr/newstr/g"
     sed -i -e "/$albumName1/d" $DBFilePath$DBFileName
     echo "Record deleted"
-    return "Success"
+    return 1
 else
     #Otherwise we call the update amount function with the album name that we want to update,
     #the album amount to be updated 
@@ -33,6 +33,6 @@ else
     #for the delete function 
     updateAmount "-d" "$albumName1" "$albumAmount"
     echo "Delete successful"
-    return "Success"
+    return 1
 fi
 }

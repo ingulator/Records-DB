@@ -19,7 +19,10 @@ function searchLogFile()
        
     fi
 }
-
+function findRecord1(){
+    echo "findRecord"
+    return 1
+}
 function findRecord()
 {
 	if [[ $1 == "-add" ]] 
@@ -49,15 +52,15 @@ function findRecord()
         select i in $searchResults
         do
             echo $i
-            return "Success"
+            return 1
         done
     elif [[ $resultAmount -eq 1 ]]
     then
         echo $searchResults
-        return "Success"
+        return 1
     else
 	echo  "$vinyl, No results were found"
-        return "Success"
+        return 1
     fi    
 }
 

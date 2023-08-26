@@ -4,6 +4,7 @@
 function addRecord()
 {
 	updateAmount "-add"
-	return "Success"
+	echo "Added"
+	return 1
 }
 
