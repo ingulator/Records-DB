@@ -13,145 +13,42 @@ Thu, Aug 24, 2023  8:58:44 PM No results found
 25-08-2023 16:14:35 Search success
 25-08-2023 16:15:33 Search success
 25-08-2023 16:16:05 Search success
-<<<<<<< HEAD
 25-08-2023 16:24:51 Search success
-=======
-25-08-2023 19:31:07 Search success
-25-08-2023 19:31:24 Search success
-25-08-2023 19:31:34 Search success
-25-08-2023 19:32:19 Search success
-25-08-2023 19:34:36 Search success
-25-08-2023 19:36:03 Search success
-25-08-2023 19:37:54 Search success
-25-08-2023 19:38:46 Search success
-25-08-2023 19:39:34 Search success
-25-08-2023 19:40:01 Search success
-25-08-2023 19:40:28 Search success
-25-08-2023 19:40:51 Search success
-25-08-2023 19:42:56 Search success
-25-08-2023 19:43:19 Search success
-25-08-2023 19:45:52 Search success
-25-08-2023 19:47:00 Search success
-25-08-2023 19:47:04 Search success
-25-08-2023 19:47:28 Search success
-25-08-2023 19:47:40 Search success
-25-08-2023 19:50:03 Search success
-25-08-2023 20:10:44 Search success
-25-08-2023 20:11:17 Search success
-25-08-2023 20:11:56 Search success
-25-08-2023 20:12:04 Search success
-25-08-2023 20:12:20 Search success
-25-08-2023 20:12:39 Search success
-25-08-2023 20:12:59 Search success
-25-08-2023 20:13:49 Search success
-25-08-2023 20:15:09 Search success
-25-08-2023 20:16:52 Search success
-25-08-2023 20:18:40 Search success
-25-08-2023 20:20:21 Search success
-25-08-2023 20:21:01 Search success
-25-08-2023 20:22:50 Search success
-25-08-2023 20:24:53 Search success
-25-08-2023 20:29:24 Search success
-25-08-2023 20:29:42 Search success
-25-08-2023 20:30:21 Search success
-25-08-2023 20:31:03 Search success
-25-08-2023 20:31:43 Search success
-25-08-2023 20:33:20 Search success
-25-08-2023 20:36:11 Search success
-25-08-2023 20:36:58 Search success
-25-08-2023 20:38:16 Search success
-25-08-2023 20:38:18 Update amount failed, due to invalid input: less than 1.
-25-08-2023 20:38:30 Search success
-25-08-2023 20:39:31 Search success
-25-08-2023 20:42:49 Search success
-25-08-2023 20:43:41 Search success
-25-08-2023 20:44:01 Search success
-25-08-2023 20:48:20 Search success
-25-08-2023 20:48:34 Search success
-25-08-2023 20:49:18 Search success
-25-08-2023 20:49:46 Search success
-25-08-2023 20:50:41 Search success
-25-08-2023 20:51:30 Search success
-25-08-2023 20:51:44 Search success
-25-08-2023 20:52:12 Search success
-25-08-2023 20:53:05 Search success
-25-08-2023 20:53:20 Search success
-25-08-2023 20:53:49 Search success
-25-08-2023 20:54:00 Search success
-25-08-2023 20:58:51 Search success
-25-08-2023 21:00:51 Search success
-25-08-2023 21:00:51 Update amount failed, due to invalid input: less than 1.
-25-08-2023 21:00:55 Search success
-25-08-2023 21:01:08 Search success
-25-08-2023 21:01:57 Search success
-25-08-2023 21:02:48 Search success
-25-08-2023 21:03:30 Search success
-25-08-2023 21:03:56 Search success
-25-08-2023 21:04:06 Search success
-25-08-2023 21:04:14 Search success
-25-08-2023 21:04:37 Search success
-25-08-2023 21:06:22 Search success
-25-08-2023 21:06:38 Search success
-25-08-2023 21:07:39 Search success
-25-08-2023 21:08:36 Search success
-25-08-2023 21:08:48 Search success
-25-08-2023 21:08:59 Search success
-25-08-2023 21:11:48 Search success
-25-08-2023 21:12:13 Search success
-25-08-2023 21:15:28 Search success
-25-08-2023 21:30:28 Search success
-25-08-2023 21:46:48 Search success
-25-08-2023 21:47:27 Search success
-25-08-2023 21:47:56 Search success
-25-08-2023 21:49:12 Search success
-25-08-2023 21:49:38 Search success
-25-08-2023 21:51:33 Search success
-25-08-2023 21:52:06 Search success
-25-08-2023 21:54:52 Search success
-25-08-2023 21:55:15 Search success
-25-08-2023 15:04:46 Search success
-25-08-2023 15:06:35 Search success
-25-08-2023 15:09:46 Search success
-25-08-2023 15:21:20 Search success
-25-08-2023 15:26:05 Search success
-25-08-2023 15:27:40 Search success
-25-08-2023 15:31:54 Search success
-25-08-2023 15:32:49 Search success
-25-08-2023 15:34:38 Search success
-25-08-2023 15:35:00 Search success
-25-08-2023 15:35:20 Search success
-25-08-2023 15:37:34 Search success
-25-08-2023 15:38:15 Search success
-25-08-2023 15:39:03 Search success
-25-08-2023 15:40:13 Search success
-25-08-2023 15:41:50 Search success
-25-08-2023 15:43:03 Search success
-25-08-2023 15:44:27 Search success
-25-08-2023 15:44:49 Search success
-25-08-2023 15:45:17 Search success
-25-08-2023 15:46:11 Search success
-25-08-2023 15:46:33 Search success
-25-08-2023 15:47:11 Search success
-25-08-2023 15:47:59 Search success
-25-08-2023 15:48:34 Search success
-25-08-2023 15:48:45 Search success
-25-08-2023 15:50:59 Search success
-25-08-2023 15:52:41 Search failure
-25-08-2023 15:53:22 Search success
-25-08-2023 15:54:50 Search success
-25-08-2023 15:55:33 Search success
-25-08-2023 15:55:46 Search success
-25-08-2023 15:56:34 Search success
-25-08-2023 15:58:03 Search success
-25-08-2023 15:58:15 Search success
-25-08-2023 16:00:45 Search success
-25-08-2023 16:01:23 Search success
-25-08-2023 16:02:07 Search success
-25-08-2023 16:02:25 Search success
-25-08-2023 16:02:40 Search success
-25-08-2023 16:03:37 Search success
-25-08-2023 16:04:14 Search success
-25-08-2023 16:04:56 Search success
-25-08-2023 16:07:12 Search success
-25-08-2023 16:07:44 Search success
->>>>>>> 0ff62c2756248a80442daf6131827cf66b56997b
+26-08-2023 23:12:10 
+26-08-2023 23:12:50 
+26-08-2023 23:14:23 
+26-08-2023 23:15:11 
+26-08-2023 23:16:16 
+26-08-2023 23:22:35 
+26-08-2023 23:24:05 
+26-08-2023 23:24:31 
+26-08-2023 23:25:48 
+26-08-2023 23:26:28 
+26-08-2023 23:26:52 
+26-08-2023 23:36:16 
+26-08-2023 23:36:36 
+26-08-2023 23:38:12 
+26-08-2023 23:38:54 
+26-08-2023 23:40:01 
+26-08-2023 23:41:43 
+26-08-2023 23:42:47 Abba
+26-08-2023 23:44:05 Abba
+26-08-2023 23:45:13 Abba
+26-08-2023 23:46:04 
+26-08-2023 23:46:19 Abba
+26-08-2023 23:48:45 Abba
+26-08-2023 23:50:37 DB/recordsDB.csv
+26-08-2023 23:51:20 lll
+26-08-2023 23:51:41 
+26-08-2023 23:52:57 lll
+26-08-2023 23:53:08 
+26-08-2023 23:56:42 
+27-08-2023 00:02:07 
+27-08-2023 00:04:35 rrty,
+27-08-2023 00:05:56 
+27-08-2023 00:06:23 lll
+27-08-2023 00:07:37 Added record: test test (albumAmt)
+27-08-2023 00:07:37 Record
+27-08-2023 00:08:54 Delete
+27-08-2023 00:11:36 test
+27-08-2023 00:13:08 findRecord

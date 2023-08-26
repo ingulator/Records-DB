@@ -2,10 +2,12 @@
 source globals/definitions.sh
 source scripts/search/search.sh
 source scripts/log/log.sh
-source scripts/updates/updateAmount.sh
-source scripts/menu.sh
+source scripts/updates/updateName.sh
 source scripts/delete/delete.sh
-
+source scripts/add/add.sh
+source scripts/prints/print.sh
+source scripts/menu.sh
+source scripts/updates/updateAmount.sh
 DBFileName=$1
 
 if [[ $# -lt 1 ]]
@@ -18,7 +20,8 @@ fi
 searchDBFile $DBFileName
 searchLogFile
 
-#print_menu
+print_menu
 ##findRecord
-#deleteVinyl $DBFileName
-
+#addRecord $DBFileName
+printSorted
+printTotal
