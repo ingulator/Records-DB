@@ -28,13 +28,11 @@ else
             exit
         fi
 
-        local albumAmount1="`echo $albumName | cut -d ' ' -f 1 | rev`"
-        echo this is albumAmount $albumAmount1
-        local temp="$albumName,$albumAmount1"
-        #local currentAmount="`grep -i ^$temp DB/recordsDB.csv | xargs sed -i 's/[:digit:]/,$amount/'`"
         #Returns only the Album name, removing the amount from the row
-        #local temp="`printf '%s\n' "${albumName//[[:digit:]]/}" | sed 's/ *$//g'`"
-        echo $temp
+        local albumNametemp="`printf '%s\n' "${albumName//[[:digit:]]/}" | sed 's/ *$//g'`"
+        local albumAmount1="`echo $albumName | rev | cut -d ' ' -f 1 | rev`"
+        local temp="$albumNametemp,$albumAmount1"
+
         #Returns the number of row in which the record the user picked is located
         #local rowNumForRecord="`awk -v var="$temp" '$1=="var" { print NR }' $DBFilePath$DBFileName`"
 
