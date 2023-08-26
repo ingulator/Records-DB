@@ -26,13 +26,21 @@ then
    #This sed command goes through to DB file to the respective row number that was passed to it, and updates the amount of album in said row 
    sed -i -e "${rowNumForRecord1}s/,.*/,$amount/" $DBFilePath$DBFileName
 else
-    
+
     local albumName=$(findRecord)
+    #albumName could either return the album name if found, or it could return 
+    #$albumName, No results were found where $albumName is the album the user
+    #Is looking for but it was not found in the database.
+    #formattedOutput should return " No results were found"
+    #And formattedAlbumName returns the album name that was searched for but not found
     local formattedOutput="`cut -d "," -f2 <<< "$albumName"`"
     local formattedAlbumName="`cut -d "," -f1 <<< "$albumName"`"	
 
     if [[ $formattedOutput == ' No results were found' ]]
     then
+        #This is a flag that was passed externally to the main function.
+        #This flag lets the program know that the main function was called from the add function, 
+        #Thus displaying the relevant messages, checks and asks for relevant inputs from the user
         if [[ $1 == "-add" ]]
         then
             echo "Record was not found in stock, adding it to the Database."
@@ -52,10 +60,17 @@ else
                 echo "Returning to Main Menu."
         fi
     else
-	    
+	    #Initializing variables
+        #stockUp is used for when the user wants to add a record, but the record already exists
+        #So stockUp is summed up with the current amount that is in stock and then updates the amount
+        #in the database
         stockUp=1
-	    amount=1
-	    addFlag=0
+	    
+        #amount is the current amount that currenlty exists in stock
+        amount=1
+	    
+        #addFlag is turned to 1 after checking if the function was called with the add function
+        addFlag=0
 
 	    if [[ $1 == "-add" ]]
 	    then
@@ -66,6 +81,7 @@ else
        		     read -p "Please enter new amount: " amount
 	    fi
 
+        #Validates the amount the user wishes to update the amount with
        	if [[ $amount -lt 1 || $stockUp -lt 1 ]]
         then
             echo "Invalid amount, amount cannot be less than 1"
@@ -79,14 +95,20 @@ else
         #rev | cut -d ' ' -f 1 | rev`"
          #awk '{print $(NF)}'`"
          
+        #Reconstructs the album name and album amount so that it has the same format
+        #as the csv file
         local temp="$albumNametemp,$albumAmount1"
 
 	    #Returns the number of row in which the record the user picked is located
 	    local rowNumForRecord="`awk -v string="$temp" '$0 == string {print NR}' $DBFilePath$DBFileName`"
       	
+        #Checks if the main function was called from the add funciton with the add flag passed
+        #As an external argument to the main function
        	if [[ $addFlag -eq 1 ]]
 	    then
-		     local addAmountToExisting=$(( $albumAmount1+$stockUp ))
+            #Calculates and sums up between the existing amount and the amount the user
+            #wants to add to stock
+		    local addAmountToExisting=$(( $albumAmount1+$stockUp ))
 		    sed -i -e "${rowNumForRecord}s/,.*/,$addAmountToExisting/" $DBFilePath$DBFileName
 	    else
         #This sed command goes through to DB file to the respective row number that was passed to it, and updates the amount of album in said row
