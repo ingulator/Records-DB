@@ -49,7 +49,7 @@ while true
         
             PrintAll)
             echo "Print all records"
-            result=$(findRecord)
+            result=$(printSorted)
             logToFile $result
             ;;  
 
