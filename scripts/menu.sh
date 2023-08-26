@@ -13,15 +13,22 @@ while true
         
             Add)
             echo "Add records"
+            result=$(addRecord)
+            logToFile $result
+            exit
             ;;
          
             Delete)
             echo "Delete records" 
+            result = deleteVinyl
+            logToFile $result
+            exit
             ;;   
         
             Search)
-            echo "Search records"
-            findRecord
+            echo "Search"
+            result = findRecord
+            logToFile $result
             exit
             ;;
         
@@ -41,8 +48,10 @@ while true
             echo "Print all records"
             ;;  
 
-            exit)
-
+            Quit)
+            echo
+            echo "Exiting program"
+            exit
             ;; 
          *)
             echo "Invalid choice. Please select a valid option."
