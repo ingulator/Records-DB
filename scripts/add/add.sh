@@ -3,22 +3,22 @@ source scripts/search/search.sh
 
 function addRecord() 
 {
-    read -p "Enter Vinyl name: " vinylName
-    read -p "Enter Amount: " amount
-
-    albumName=$(findRecord "$vinylName")
-
-    if [[ -n "$albumName" ]] 
+    read -p "Enter Vinyl name: " vinyl
+    
+    echo "vinil " $vinyl
+    #TODO FIX IF
+    if [[ -n "$vinyl" ]] 
     then
         echo "Vinyl name exist"
         logToFile "Update Amount"
+        exit 1
     else
-        echo "$vinylName,$amount" >> "$DBFilePath$DBFileName"
-        logToFile "Added record: $vinylName ($amount)"
+        echo "$vinyl,$amount" >> "$DBFilePath$DBFileName"
+        logToFile "Added record: $vinyl ($amount)"
+        exit 1
     fi
+    #read -p "Enter Amount: " amount
 }
-
-
 
 
 
