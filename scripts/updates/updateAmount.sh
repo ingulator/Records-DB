@@ -44,7 +44,7 @@ else
         if [[ $1 == "-add" ]]
         then
             echo "Record was not found in stock, adding it to the Database."
-            read -p "Please enter the amount of Album to add" albumAmt
+            read -p "Please enter the amount of Album to add :" albumAmt
             
             if [[ $albumAmt -lt 1 ]]
             then
