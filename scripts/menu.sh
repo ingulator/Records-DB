@@ -28,7 +28,7 @@ while true
             echo "Search"
             #findRecord
             result=$(findRecord)
-            #logToFile $result
+            logToFile "Search" "Success"
             ;;
         
             UpdateName)
